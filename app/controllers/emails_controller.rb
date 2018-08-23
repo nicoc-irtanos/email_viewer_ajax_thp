@@ -9,6 +9,7 @@ class EmailsController < ApplicationController
   def show
     @email_id = Email.find(params[:id].to_i + 1)
     respond_to do |format|
+      format.html { redirect_to emails_path }
       format.js
     end
   end
@@ -20,13 +21,14 @@ class EmailsController < ApplicationController
       respond_to do |format|
         format.html { redirect_to emails_path }
         format.js
+      end
     else
       flash["danger"] = "Your email has not been created"
-      end
     end
   end
 
   def destroy
+    @email_all = Email.all
     @email = Email.destroy(params[:id])
     respond_to do |f|
       f.html { redirect_to emails_path }
