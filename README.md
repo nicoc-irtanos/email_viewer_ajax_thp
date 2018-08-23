@@ -25,9 +25,9 @@ Go sur http://localhost:3000/
 
 <h2>Réalisé par la team:</h2>
 
-Nico C
-Dimitri K
-Nico Z
-Amelie F
+Nico C, 
+Dimitri K, 
+Nico Z, 
+Amelie F, 
 Valérie C
   
