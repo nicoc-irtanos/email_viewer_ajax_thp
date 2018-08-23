@@ -8,7 +8,11 @@
     <tr>
   </thead>
   <tbody>
-    <% @email.each do |email| %>
+    <tr>
+      <td><%= @email.first.object %></td>
+      <td rowspan="<%= @email.length %>">Sélectionner un email</td>
+    </tr>
+    <% @email.slice(1..@email.length).each do |email| %>
     <tr>
       <td><%= email.object %><td>
     </tr>
