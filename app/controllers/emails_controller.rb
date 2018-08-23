@@ -17,15 +17,26 @@ class EmailsController < ApplicationController
     @email = Email.new(email_params)
     if @email.save
       flash["success"] = "Email created"
+      respond_to do |format|
+        format.html { redirect_to emails_path }
+        format.js
+    else
+      flash["danger"] = "Your email has not been created"
+      end
     end
   end
 
   def destroy
+    @email = Email.destroy(params[:id])
+    respond_to do |f|
+      f.html { redirect_to emails_path }
+      f.js
+    end
   end
-end
 
-private
+  private
 
   def email_params
     params.require(:email).permit(:object, :body)
   end
+end
