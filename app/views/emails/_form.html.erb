@@ -1,0 +1,11 @@
+
+<%= form_with model: Email.new do |form| %>
+  <%= form.label :object %>
+  <%= form.text_field :object %>
+  <br><br>
+  <%= form.label :body %>
+  <%= form.text_area :body %>
+  <br><br>
+  <%= form.submit %>
+<% end %>
+<br>

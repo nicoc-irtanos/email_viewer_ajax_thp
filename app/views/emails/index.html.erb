@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 
@@ -24,39 +25,44 @@
 
 <body>
 
-<center>
+
 
 <br></br><br></br><br></br><br></br>
 
 
-
+<center>
 <h1>Welcome my friend</h1>
 <p>Bienvenue</p>
 
+<%= render 'form' %>
 
+<div style="display:flex">
 <table>
   <thead>
     <tr>
       <th>Objets</th>
-      <th>Contenu</th>
-      <tr>
-      </thead>
-
-
-
-      <tbody>
-        <tr>
-          <td><%= @email.first.object %></td>
-          <td rowspan="<%= @email.length %>">Sélectionner un email</td>
-        </tr>
-        <% @email.slice(1..@email.length).each do |email| %>
-        <tr>
-          <td><%= email.object %><td>
-          </tr>
-          <% end %>
-        </tbody>
-      </table>
-
+    <tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= link_to @email_all.first.object, email_path(@email_all.first.id - 1), remote: true, data: { id: @email_all.first.id - 1}%></td>
+    </tr>
+    <% @email_all.slice(1..@email_all.length).each do |email| %>
+    <tr>
+      <td><%= link_to email.object, email_path(email.id - 1), remote: true, data: { id: email.id - 1} %><td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+<table>
+  <thead>
+    <th>Contenu</th>
+  </thead>
+  <tbody>
+      <td id ="contenu" rowspan="<%= @email_all.length %>">Sélectionner un email</td>
+  </tbody>
+</table>
+</div>
 </center>
 
       <footer>
