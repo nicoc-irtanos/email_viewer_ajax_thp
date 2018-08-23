@@ -1,5 +1,6 @@
 <h1>Hello</h1>
 <p>Je suis l'index</p>
+<%= render 'form' %>
 <table>
   <thead>
     <tr>
@@ -9,10 +10,10 @@
   </thead>
   <tbody>
     <tr>
-      <td><%= @email.first.object %></td>
-      <td rowspan="<%= @email.length %>">Sélectionner un email</td>
+      <td><%= @email_all.first.object %></td>
+      <td rowspan="<%= @email_all.length %>">Sélectionner un email</td>
     </tr>
-    <% @email.slice(1..@email.length).each do |email| %>
+    <% @email_all.slice(1..@email_all.length).each do |email| %>
     <tr>
       <td><%= email.object %><td>
     </tr>
