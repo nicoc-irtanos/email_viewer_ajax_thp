@@ -1,5 +1,6 @@
 <h1>Hello</h1>
 <p>Je suis l'index</p>
+<%= render 'form' %>
 <table>
   <thead>
     <tr>
@@ -12,7 +13,7 @@
       <td><%= link_to @email_all.first.object, @email_all_path %></td>
       <td id ="contenu"rowspan="<%= @email_all.length %>">Sélectionner un email</td>
     </tr>
-    <% @email_all.slice(1..@email_all.length).each_with_index do |email, i| %>
+    <% @email_all.slice(1..@email_all.length).each do |email| %>
     <tr>
       <td><div class="object"><%= email.object %></div><td>
     </tr>
