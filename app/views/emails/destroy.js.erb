@@ -3,9 +3,6 @@ $(document).ready(function() {
   $("a[data-id='<%= @email.id - 1 %>']").parent().parent().remove()
 //  L'id du supprimé est inférieur de 1 au nouveau premier
   <% if (@email.id + 1 == @email_all.first.id) %>
-// pour la template, qui utilise @email.id
-// car @email.id a été supprimé
-// on prend le prochain
     $('tbody tr:first td:nth-child(2)').html("Sélectionner un email");
   <% end %>
 
