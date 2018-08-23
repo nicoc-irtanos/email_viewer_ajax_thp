@@ -1,23 +1,30 @@
 <h1>Hello</h1>
 <p>Je suis l'index</p>
 <%= render 'form' %>
+<div style="display:flex">
 <table>
   <thead>
     <tr>
       <th>Objets</th>
-      <th>Contenu</th>
     <tr>
   </thead>
   <tbody>
     <tr>
-      <td><%= @email_all.first.object %></td>
-      <td rowspan="<%= @email_all.length %>">Sélectionner un email</td>
+      <td><%= link_to @email_all.first.object, email_path(@email_all.first.id - 1), remote: true, data: { id: @email_all.first.id - 1}%></td>
     </tr>
     <% @email_all.slice(1..@email_all.length).each do |email| %>
     <tr>
-      <td><%= email.object %><td>
-      <td><%= link_to 'Destroy', email, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <td><%= link_to email.object, email_path(email.id - 1), remote: true, data: { id: email.id - 1} %><td>
     </tr>
     <% end %>
   </tbody>
 </table>
+<table>
+  <thead>
+    <th>Contenu</th>
+  </thead>
+  <tbody>
+      <td id ="contenu" rowspan="<%= @email_all.length %>">Sélectionner un email</td>
+  </tbody>
+</table>
+</div>
