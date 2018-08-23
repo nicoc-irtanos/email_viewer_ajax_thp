@@ -6,6 +6,13 @@ class EmailsController < ApplicationController
   def new
   end
 
+  def show
+    @email_id = Email.find(params[:id].to_i + 1)
+    respond_to do |format|
+      format.js
+    end
+  end
+
   def create
     @email = Email.new(email_params)
     if @email.save

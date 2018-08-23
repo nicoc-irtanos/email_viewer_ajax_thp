@@ -10,12 +10,12 @@
   </thead>
   <tbody>
     <tr>
-      <td><%= link_to @email_all.first.object, @email_all_path %></td>
-      <td id ="contenu"rowspan="<%= @email_all.length %>">Sélectionner un email</td>
+      <td><%= link_to @email_all.first.object, email_path(0), remote: true %></td>
+      <td id ="contenu" rowspan="<%= @email_all.length %>">Sélectionner un email</td>
     </tr>
-    <% @email_all.slice(1..@email_all.length).each do |email| %>
+    <% @email_all.slice(1..@email_all.length).each_with_index do |email,i| %>
     <tr>
-      <td><div class="object"><%= email.object %></div><td>
+      <td><%= link_to email.object, email_path(i + 1), remote: true %><td>
     </tr>
     <% end %>
   </tbody>
