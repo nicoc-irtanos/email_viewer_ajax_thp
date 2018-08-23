@@ -1,21 +1,84 @@
-<h1>Hello</h1>
-<p>Je suis l'index</p>
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Hello</title>
+</head>
+
+
+<div class="tete">
+<header>
+
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeSLY4zziO9zhwVJe0WJmvFBMteSAMF-M9XJknujgClyrRH2iqxw" alt="logo" class="logo">
+  <strong><p class="titre">THE HACKING PROJECT</p></strong>
+  <nav>
+    <a href="#">Accueil</a>
+    <a href="#">Contact</a>
+    <a href="#">Se connecter</a>
+  </nav>
+
+</header>
+</div>
+
+
+<body>
+
+<center>
+
+<br></br><br></br><br></br><br></br>
+
+
+
+<h1>Welcome my friend</h1>
+<p>Bienvenue</p>
+
+
 <table>
   <thead>
     <tr>
       <th>Objets</th>
       <th>Contenu</th>
-    <tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><%= @email.first.object %></td>
-      <td rowspan="<%= @email.length %>">Sélectionner un email</td>
-    </tr>
-    <% @email.slice(1..@email.length).each do |email| %>
-    <tr>
-      <td><%= email.object %><td>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
+      <tr>
+      </thead>
+
+
+
+      <tbody>
+        <tr>
+          <td><%= @email.first.object %></td>
+          <td rowspan="<%= @email.length %>">Sélectionner un email</td>
+        </tr>
+        <% @email.slice(1..@email.length).each do |email| %>
+        <tr>
+          <td><%= email.object %><td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+
+</center>
+
+      <footer>
+        <ul>
+          <li>
+            <a href="https://www.facebook.com/">
+              <i class="fab fa-facebook-f"></i> Facebook
+            </a>
+          </li>
+          <li>
+            <a href="https://www.youtube.com/">
+              <i class="fab fa-linkedin-in"></i> Youtube
+            </a>
+          </li>
+          <li>
+            <a href="https://twitter.com/?lang=fr">
+              <i class="fab fa-twitter"></i> Twitter
+            </a>
+          </li>
+        </ul>
+      </footer>
+
+</body>
+
+      </html>
