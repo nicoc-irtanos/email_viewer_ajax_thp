@@ -16,6 +16,7 @@
     <% @email_all.slice(1..@email_all.length).each do |email| %>
     <tr>
       <td><%= email.object %><td>
+      <td><%= link_to 'Destroy', email, method: :delete, data: { confirm: 'Are you sure?' } %></td>
     </tr>
     <% end %>
   </tbody>
