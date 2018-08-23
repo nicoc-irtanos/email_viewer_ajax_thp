@@ -1,2 +1,17 @@
 <h1>Hello</h1>
 <p>Je suis l'index</p>
+<table>
+  <thead>
+    <tr>
+      <th>Objets</th>
+      <th>Contenu</th>
+    <tr>
+  </thead>
+  <tbody>
+    <% @email.each do |email| %>
+    <tr>
+      <td><%= email.object %><td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
